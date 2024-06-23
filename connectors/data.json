@@ -52,7 +52,7 @@
         "install_mode": "rpm"
     },
     {
-        "name": "fortinet-fortiedr_dev",
+        "name": "fortinet-fortiedr",
         "label": "Fortinet FortiEDR",
         "category": [
             "Endpoint Protection"
