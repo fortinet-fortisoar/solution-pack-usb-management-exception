@@ -11,18 +11,18 @@
         "configurations": [
             {
                 "id": 72,
-                "config_id": "6ef440c4-9c5e-4ac1-a634-ea7603b9f836",
+                "config_id": "",
                 "status": 1,
                 "name": "Active Directory",
                 "default": true,
                 "config": {
-                    "port": 389,
-                    "baseDN": "DC=Fortinet-test,DC=COM",
+                    "port": ,
+                    "baseDN": "",
                     "bindDN": "",
                     "use_tls": false,
-                    "hostname": "192.168.55.10",
-                    "password": "nzYAlaNRuuH73MyrJYBp5i7pufIB0GDalMFz2DRylA==I3dmcn23@KlS2#!ck",
-                    "username": "Administrator"
+                    "hostname": "",
+                    "password": "",
+                    "username": ""
                 },
                 "remote_status": [],
                 "health_status": [],
@@ -69,9 +69,9 @@
                 "name": "FortiEDR",
                 "default": true,
                 "config": {
-                    "password": "u8Sl\/V5X4MWalcGGZZ5PWusyNuB3oVVMflYcmjt9Iw==I3dmcn23@KlS2#!ck",
-                    "username": "EMEA-UAE-SE\\ibaker",
-                    "server_url": "https:\/\/fortinetdemoemea.console.ensilo.com\/",
+                    "password": "",
+                    "username": "",
+                    "server_url": "",
                     "verify_ssl": true
                 },
                 "remote_status": [],
