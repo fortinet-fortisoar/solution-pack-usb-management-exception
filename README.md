@@ -1,8 +1,9 @@
 # Release Information
 
 - **Version**:  1.0.0
-- **Certified**: Yes
-- **Publisher**: Islam Baker
+- **Certified**: No
+- **Publisher**: Fortinet SSE
+- **Contributor**: Islam Baker
 - **Compatible Version**: FortiSOAR v7.2.0 and later
 - [Release Notes](./release_notes.md)
 
