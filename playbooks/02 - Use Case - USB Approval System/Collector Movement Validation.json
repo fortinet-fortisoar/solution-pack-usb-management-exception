@@ -56,7 +56,7 @@
                     "inline_iri_list": ""
                 },
                 "version": "9.9.9",
-                "connector": "exchange_dev",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -86,7 +86,7 @@
                     "inline_iri_list": ""
                 },
                 "version": "9.9.9",
-                "connector": "exchange_dev",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -113,7 +113,7 @@
                     "targetCollectorGroup": "FlagTheHack"
                 },
                 "version": "2.0.0",
-                "connector": "fortinet-fortiedr_dev",
+                "connector": "fortinet-fortiedr",
                 "operation": "Move_collector",
                 "ignore_errors": true,
                 "operationTitle": "Move Collector to Another group",
