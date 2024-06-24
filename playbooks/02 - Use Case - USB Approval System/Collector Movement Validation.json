@@ -1,10 +1,10 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Validation Moving",
+    "name": "Collector Movement Validation",
     "aliasName": null,
     "tag": null,
-    "description": null,
+    "description": "This playbook verifies collector movements and notifies relevant parties of errors.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -307,5 +307,7 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": []
+    "recordTags": [
+        "Referenced"
+    ]
 }

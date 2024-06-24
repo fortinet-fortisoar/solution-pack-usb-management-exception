@@ -1,10 +1,10 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "USB Exception",
+    "name": "USB Access Request",
     "aliasName": null,
     "tag": null,
-    "description": null,
+    "description": "This playbook automates USB access request approvals.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -915,5 +915,7 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": []
+    "recordTags": [
+        "PostCreate"
+    ]
 }

@@ -1,10 +1,10 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Remove USB Permission",
+    "name": "USB Permission Revocation",
     "aliasName": null,
     "tag": null,
-    "description": null,
+    "description": "This playbook automates revoking USB access permissions when they expire.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -155,7 +155,9 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": [],
+    "recordTags": [
+        "ManualTrigger"
+    ],
     "schedules": [
         {
             "crontab": {
@@ -208,9 +210,9 @@
             "one_off": false,
             "start_time": null,
             "enabled": true,
-            "last_run_at": "2024-06-24T09:30:00.131126Z",
-            "total_run_count": 24,
-            "date_changed": "2024-06-24T09:30:00.179566Z",
+            "last_run_at": "2024-06-24T09:50:00.030343Z",
+            "total_run_count": 28,
+            "date_changed": "2024-06-24T09:51:35.367219Z",
             "description": "Remove USB",
             "solar": null,
             "clocked": null
