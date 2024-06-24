@@ -16,7 +16,7 @@
     "prerequisite": "* FortiEDR Connector\n* Active Directory Connector \n* Exchange Connector",
     "publisher": "Islam Baker",
     "description": "Fortisoar powerful tool to automate manual and repetitive tasks, especially when it comes to security and infrastructure? Juggling USB exception requests can be a real pain, with endless emails, approvals, and documentation. But what if there was a better way?\n\nIn this Solution pack, we'll show you exactly how Fortisoar can:\n\n\u2022\tEliminate tedious information gathering: Say goodbye to chasing down user details and approval statuses. Fortisoar captures everything automatically, saving you precious time and frustration.\n\u2022\tSimplify approvals: No more manual back-and-forth with managers. Fortisoar automates the approval process, ensuring it's efficient and transparent.\n\u2022\tAutomate access expiration: Never worry about forgetting to remove permissions again. Fortisoar automatically sets and enforces expiration dates, keeping your systems secure.\n\u2022\tStreamline documentation: Ditch the paper trail! Fortisoar keeps a complete audit log of all requests and approvals, readily available for compliance purposes.\n\nFortisoar can transform your USB exception management",
-    "help": null,
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-usb-management-exception/blob/release/1.0.0/README.md",
     "category": [
         "Endpoint Management"
     ],
@@ -26,7 +26,7 @@
     "recordTags": [
         "USB Exception"
     ],
-    "date": "2024-02-27T08:55:11+00:00",
+    "date": "2024-06-24T09:33:14+00:00",
     "contents": {
         "picklistNames": [
             {
@@ -56,9 +56,14 @@
                 ]
             }
         },
+        "roles": [
+            {
+                "name": "Full App Permissions"
+            }
+        ],
         "playbooks": [
             {
-                "name": "USB Approval system"
+                "name": "02 - Use Case - USB Approval System"
             }
         ],
         "dashboards": [
@@ -77,8 +82,7 @@
             },
             {
                 "name": "Fortinet FortiEDR",
-                "apiName": "fortinet-fortiedr",
-                "version": ""
+                "apiName": "fortinet-fortiedr"
             }
         ]
     }
