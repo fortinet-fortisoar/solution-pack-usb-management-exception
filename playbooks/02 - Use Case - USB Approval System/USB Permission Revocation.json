@@ -170,7 +170,7 @@
                 "timezone": "UTC"
             },
             "interval": null,
-            "name": "Remove USB",
+            "name": "Remove USB Permission",
             "task": "workflow.tasks.periodic_task",
             "args": "[]",
             "kwargs": {
@@ -191,13 +191,13 @@
                 },
                 "exit_if_running": false,
                 "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-                "name": "Remove USB",
-                "description": "Remove USB",
+                "name": "Remove USB Permission",
+                "description": "Remove USB Permission",
                 "auth": {
                     "auth_method": "CS HMAC"
                 },
                 "referenceid": null,
-                "schedule_entry_name": "Remove USB",
+                "schedule_entry_name": "Remove USB Permission",
                 "schedule_id": "b0f43faa-4c1a-4a65-bbdd-1fdbce376616"
             },
             "queue": null,
@@ -213,7 +213,7 @@
             "last_run_at": "2024-08-12T11:45:00.144577Z",
             "total_run_count": 200,
             "date_changed": "2024-08-12T11:45:00.358501Z",
-            "description": "Remove USB",
+            "description": "Remove USB Permission",
             "solar": null,
             "clocked": null
         }
