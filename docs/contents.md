@@ -14,7 +14,7 @@ The **USB Management Exceptions** solution pack contains the following resources
 
 | Name                                    | Description                                                                                                                                         |
 |:----------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fortinet FortiEDR                       | FortiEDR Connetor to Move Collectors from Current Group to allow USB Group.                                                                         |
+| Fortinet FortiEDR                       | FortiEDR Connector to Move Collectors from Current Group to allow USB Group.                                                                         |
 | Microsoft Exchange                      | Microsoft Exchange connector fetches Request and approval by Email.                                                                                 |
 | Microsoft Active Directory              | Microsoft Active Directory Connector to get requester information and Manager details.                                                              |
 
@@ -31,11 +31,9 @@ The **USB Management Exceptions** solution pack contains the following resources
 
 | Name                                   |
 |:---------------------------------------|
-| ApprovalStatus                         |
 | USBUSerRequest                         |
-| ValidationRequest                      |
-| StatusApproval                         |
-| Status                                 |
+| Validation                             |
+| Request Status                         |
 
 
 ## Schedules
@@ -47,15 +45,14 @@ The **USB Management Exceptions** solution pack contains the following resources
 
 ## Playbook Collection
 
-| USB Approval system                   |
+| 02 - Use Case - USB Approval System   |
 | :------------------------------------ |
-
 
 | Playbook Name                                              | Description                                                                                 |
 |:-----------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-| USB Exception                                              | This playbook to give USB Access to Machine                                                 |
-| Remove USB Permission                                      | This playbook to revoke USB Access from Machine after the status become expire              |
-| Validation Moving                                          | This playbook to validate if the operation succeeded                                        |
+| Collector Movement Validation                                             | This playbook verifies collector movements and notifies relevant parties of errors.                                  |
+| USB Access Request                                    |     This playbook automates USB access request approvals.      |
+| USB Permission Revocation                                        | This playbook automates revoking USB access permissions when they expire.                                      |
 
 
 >**WARNING:** We recommend that you clone these playbooks before customizing to avoid loss of information while upgrading the solution pack.

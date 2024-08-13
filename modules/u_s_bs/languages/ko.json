@@ -1,0 +1,21 @@
+{
+    "U_S_BS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "USB",
+            "PLURAL_NAME": "USBs"
+        },
+        "FIELDS": {
+            "REQUESTERNAME": "요청자 이름",
+            "REQUESTSTATUS": "요청 상태",
+            "MANAGERJUSTIFICATION": "관리자 정당화",
+            "MACHINENAME": "기계 이름",
+            "ALLOWEDUNTIL": "허용 기간",
+            "MANAGERAPPROVALSTATUS": "관리자 승인 상태",
+            "MANAGEREMAIL": "관리자 이메일",
+            "MANAGERNAME": "관리자 이름",
+            "USEREMAIL": "요청자 이메일",
+            "USERNAME": "요청자 사용자명",
+            "VALIDATION": "검증"
+        }
+    }
+}
