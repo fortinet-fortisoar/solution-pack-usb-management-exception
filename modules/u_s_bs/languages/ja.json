@@ -1,0 +1,21 @@
+{
+    "U_S_BS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "USB",
+            "PLURAL_NAME": "USBs"
+        },
+        "FIELDS": {
+            "REQUESTERNAME": "依頼者名",
+            "REQUESTSTATUS": "依頼状況",
+            "MANAGERJUSTIFICATION": "マネージャーの正当化",
+            "MACHINENAME": "機械名",
+            "ALLOWEDUNTIL": "許可期限",
+            "MANAGERAPPROVALSTATUS": "マネージャーの承認状況",
+            "MANAGEREMAIL": "マネージャーのメール",
+            "MANAGERNAME": "マネージャー名",
+            "USEREMAIL": "依頼者のメール",
+            "USERNAME": "依頼者のユーザー名",
+            "VALIDATION": "検証"
+        }
+    }
+}

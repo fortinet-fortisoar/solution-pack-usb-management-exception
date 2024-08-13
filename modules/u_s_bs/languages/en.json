@@ -1,0 +1,21 @@
+{
+    "U_S_BS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "USB",
+            "PLURAL_NAME": "USBs"
+        },
+        "FIELDS": {
+            "REQUESTERNAME": "Requester Name",
+            "REQUESTSTATUS": "Request Status",
+            "MANAGERJUSTIFICATION": "Manager Justification",
+            "MACHINENAME": "Machine Name",
+            "ALLOWEDUNTIL": "Allowed Until",
+            "MANAGERAPPROVALSTATUS": "Manager Approval Status",
+            "MANAGEREMAIL": "Manager Email",
+            "MANAGERNAME": "Manager Name",
+            "USEREMAIL": "Requester Email",
+            "USERNAME": "Requester Username",
+            "VALIDATION": "Validation"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "U_S_BS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "USB",
+            "PLURAL_NAME": "USBs"
+        },
+        "FIELDS": {
+            "REQUESTERNAME": "请求者姓名",
+            "REQUESTSTATUS": "请求状态",
+            "MANAGERJUSTIFICATION": "经理说明",
+            "MACHINENAME": "机器名",
+            "ALLOWEDUNTIL": "允许至",
+            "MANAGERAPPROVALSTATUS": "经理审批状态",
+            "MANAGEREMAIL": "经理邮箱",
+            "MANAGERNAME": "经理姓名",
+            "USEREMAIL": "请求者邮箱",
+            "USERNAME": "请求者用户名",
+            "VALIDATION": "验证"
+        }
+    }
+}
