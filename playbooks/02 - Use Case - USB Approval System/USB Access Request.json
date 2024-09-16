@@ -1,13 +1,12 @@
 {
-    "@context": "\/api\/3\/contexts\/Workflow",
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "USB Exception",
+    "name": "USB Access Request",
     "aliasName": null,
     "tag": null,
-    "description": null,
+    "description": "This playbook automates USB access request approvals.",
     "isActive": true,
-    "debug": true,
+    "debug": false,
     "singleRecordExecution": false,
     "remoteExecutableFlag": false,
     "parameters": [],
@@ -28,12 +27,12 @@
                     "subject": "USB Request - ID {{vars.input.records[0].id}} has been approved",
                     "iri_list": "",
                     "cc_recipients": "",
-                    "to_recipients": "{{vars.input.records[0].senderEmailAddress}}",
+                    "to_recipients": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}",
                     "bcc_recipients": "",
                     "inline_iri_list": ""
                 },
-                "version": "9.9.9",
-                "connector": "exchange_dev",
+                "version": "4.5.0",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -58,12 +57,12 @@
                     "subject": "USB Request - ID {{vars.input.records[0].id}}",
                     "iri_list": "",
                     "cc_recipients": "",
-                    "to_recipients": "{{vars.input.records[0].senderEmailAddress}}",
+                    "to_recipients": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}",
                     "bcc_recipients": "",
                     "inline_iri_list": ""
                 },
-                "version": "9.9.9",
-                "connector": "exchange_dev",
+                "version": "4.5.0",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -84,7 +83,7 @@
                 "resource": {
                     "username": "{{vars.steps.Get_Requester_information.data.entries[0].attributes.sAMAccountName}}",
                     "__replace": "",
-                    "userEmail": "{{vars.steps.Get_Requester_information.data.entries[0].attributes.mail}}",
+                    "userEmail": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}",
                     "validation": "\/api\/3\/picklists\/a83bf5f0-03c6-469c-a2ba-fd96cbdd9396",
                     "managerName": "{{vars.steps.Get_Requester_Manager_information.data.entries[0].attributes.name}}",
                     "managerEmail": "{{vars.steps.Get_Requester_Manager_information.data.entries[0].attributes.mail}}",
@@ -118,12 +117,12 @@
                     "subject": "USB Request - ID {{vars.input.records[0].id}} has been cancled",
                     "iri_list": "",
                     "cc_recipients": "",
-                    "to_recipients": "{{vars.input.records[0].senderEmailAddress}}",
+                    "to_recipients": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}",
                     "bcc_recipients": "",
                     "inline_iri_list": ""
                 },
-                "version": "9.9.9",
-                "connector": "exchange_dev",
+                "version": "4.5.0",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -142,17 +141,17 @@
             "description": null,
             "arguments": {
                 "name": "Active Directory",
-                "config": "ce37755d-93e2-4fb0-9598-0fa60eb73b91",
+                "config": "Demo",
                 "params": {
                     "cookie": "",
                     "page_size": "",
                     "size_limit": "",
                     "search_object": "User",
                     "search_attr_name": "Email",
-                    "search_attr_value": "{{vars.input.records[0].senderEmailAddress}}"
+                    "search_attr_value": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}"
                 },
-                "version": "5.5.5",
-                "connector": "activedirectory_dev",
+                "version": "2.4.0",
+                "connector": "activedirectory",
                 "operation": "global_search",
                 "operationTitle": "Global Search",
                 "pickFromTenant": false,
@@ -181,7 +180,7 @@
                     "search_attr_value": "{{vars.steps.Get_Requester_information.data.entries[0].attributes.manager}}"
                 },
                 "version": "5.5.5",
-                "connector": "activedirectory_dev",
+                "connector": "activedirectory",
                 "operation": "global_search",
                 "operationTitle": "Global Search",
                 "pickFromTenant": false,
@@ -202,16 +201,17 @@
                 "name": "Fortinet FortiEDR",
                 "config": "ccabff18-59bc-45c5-b4b5-9f0941d39aa0",
                 "params": {
+                    "org_name": "EMEA-UAE-SE",
                     "collectors": "{{vars.steps.Request_Machine_Name.input.machineName}}",
-                    "forceAssign": "True",
-                    "organization": "EMEA-UAE-SE",
+                    "forceAssign": true,
+                    "organization": "Exact Organization Name",
                     "targetCollectorGroup": "Allow-USB"
                 },
                 "version": "2.0.0",
-                "connector": "fortinet-fortiedr_dev",
-                "operation": "Move_collector",
+                "connector": "fortinet-fortiedr",
+                "operation": "move_collectors",
                 "ignore_errors": true,
-                "operationTitle": "Move Collector to Another group",
+                "operationTitle": "Move Collectors",
                 "pickFromTenant": false,
                 "step_variables": []
             },
@@ -233,13 +233,13 @@
                     "body": "<p>Dear {{vars.steps.Get_Requester_information.data.entries[0].attributes.displayName}}<\/p>\n<p>&nbsp;<\/p>\n<p>your request has been failed due to error ,<\/p>\n<p>{{vars.steps.Move_Collector['Error message']}}<\/p>",
                     "subject": "USB Request - ID {{vars.input.records[0].id}} has been failed",
                     "iri_list": "",
-                    "cc_recipients": "",
-                    "to_recipients": "{{vars.input.records[0].senderEmailAddress}}",
+                    "cc_recipients": "{{vars.steps.Get_Requester_Manager_information.data.entries[0].attributes.mail}}",
+                    "to_recipients": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}",
                     "bcc_recipients": "",
                     "inline_iri_list": ""
                 },
-                "version": "9.9.9",
-                "connector": "exchange_dev",
+                "version": "4.4.0",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -283,12 +283,12 @@
                     "subject": "USB Request - ID {{vars.input.records[0].id}} has been Rejected",
                     "iri_list": "",
                     "cc_recipients": "",
-                    "to_recipients": "{{vars.input.records[0].senderEmailAddress}}",
+                    "to_recipients": "{{vars.input.records[0].senderEmailAddress| regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}",
                     "bcc_recipients": "",
                     "inline_iri_list": ""
                 },
-                "version": "9.9.9",
-                "connector": "exchange_dev",
+                "version": "4.5.0",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -613,11 +613,9 @@
             "description": null,
             "arguments": {
                 "resource": {
-                    "validation": "\/api\/3\/picklists\/99da698b-25f4-400f-bd33-56340d1162db",
+                    "validation": "\/api\/3\/picklists\/7fe30555-4ad5-495f-a360-60c207ded3eb",
                     "allowedUntil": "{{arrow.get(vars.steps.Request_Approval_From_Manager.input.allowTill).int_timestamp}}",
-                    "requestStatus": "\/api\/3\/picklists\/427ec113-86c8-4e32-84ef-50147ff03e77",
-                    "managerJustification": "{{vars.steps.Request_Approval_From_Manager.input.justification}}",
-                    "managerApprovalStatus": "\/api\/3\/picklists\/4f67349f-2006-4f4f-b9e4-bdca7ed18fb6"
+                    "managerJustification": "{{vars.steps.Request_Approval_From_Manager.input.justification}}"
                 },
                 "operation": "Append",
                 "collection": "{{vars.steps.Create_USB_Record['@id']}}",
@@ -641,7 +639,7 @@
             "description": null,
             "arguments": {
                 "resource": {
-                    "validation": "\/api\/3\/picklists\/7fe30555-4ad5-495f-a360-60c207ded3eb",
+                    "validation": "\/api\/3\/picklists\/99da698b-25f4-400f-bd33-56340d1162db",
                     "requestStatus": "\/api\/3\/picklists\/0aff82e9-c575-483b-b0eb-1e7d3d5f088b",
                     "managerJustification": "{{vars.steps.Request_Approval_From_Manager.input.justification}}",
                     "managerApprovalStatus": "\/api\/3\/picklists\/50b13f64-d811-4d66-aeb2-112e266c3465"
@@ -698,7 +696,7 @@
                     {
                         "option": "Collector moved",
                         "step_iri": "\/api\/3\/workflow_steps\/d18568c6-b281-405d-b8ba-58a754abc350",
-                        "condition": "{{ vars.steps.Move_Collector.data.result == 'Successfully executed Move_collector' }}",
+                        "condition": "{{ vars.steps.Move_Collector.data.result == 'Successfully executed move_collectors' }}",
                         "step_name": "Update Manager Request after approval"
                     },
                     {
@@ -916,5 +914,7 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": []
+    "recordTags": [
+        "PostCreate"
+    ]
 }

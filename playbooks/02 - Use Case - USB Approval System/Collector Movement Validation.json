@@ -1,11 +1,10 @@
 {
-    "@context": "\/api\/3\/contexts\/Workflow",
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Validation Moving",
+    "name": "Collector Movement Validation",
     "aliasName": null,
     "tag": null,
-    "description": null,
+    "description": "This playbook verifies collector movements and notifies relevant parties of errors.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -31,7 +30,7 @@
                 "CaseID": "{{vars.input.params['Case ID']}}",
                 "MachineName": "{{vars.input.params['Machine Name']}}",
                 "ManagerEmail": "{{vars.input.params['Manager Email']}}",
-                "RequestorEmail": "{{vars.input.params['Requestor Email']}}"
+                "RequestorEmail": "{{vars.input.params['Requestor Email'] | regex_search(\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\")}}"
             },
             "status": null,
             "top": "165",
@@ -56,8 +55,8 @@
                     "bcc_recipients": "",
                     "inline_iri_list": ""
                 },
-                "version": "9.9.9",
-                "connector": "exchange_dev",
+                "version": "4.5.0",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -87,7 +86,7 @@
                     "inline_iri_list": ""
                 },
                 "version": "9.9.9",
-                "connector": "exchange_dev",
+                "connector": "exchange",
                 "operation": "send_email",
                 "operationTitle": "Send Email",
                 "pickFromTenant": false,
@@ -108,16 +107,17 @@
                 "name": "Fortinet FortiEDR",
                 "config": "ccabff18-59bc-45c5-b4b5-9f0941d39aa0",
                 "params": {
-                    "collectors": "{{vars.input.params['Machine Name']}}",
-                    "forceAssign": "",
-                    "organization": "EMEA-UAE-SE",
+                    "org_name": "EMEA-UAE-SE",
+                    "collectors": "{{vars.MachineName}}",
+                    "forceAssign": true,
+                    "organization": "Exact Organization Name",
                     "targetCollectorGroup": "FlagTheHack"
                 },
                 "version": "2.0.0",
-                "connector": "fortinet-fortiedr_dev",
-                "operation": "Move_collector",
+                "connector": "fortinet-fortiedr",
+                "operation": "move_collectors",
                 "ignore_errors": true,
-                "operationTitle": "Move Collector to Another group",
+                "operationTitle": "Move Collectors",
                 "pickFromTenant": false,
                 "step_variables": []
             },
@@ -210,7 +210,7 @@
                     {
                         "option": "Collector moved",
                         "step_iri": "\/api\/3\/workflow_steps\/c2779bae-636c-49f4-ad07-bdad185505d5",
-                        "condition": "{{ vars.steps.Revoke_permission.data.result == 'Successfully executed Move_collector' }}",
+                        "condition": "{{ vars.steps.Revoke_permission.data.result == 'Successfully executed move_collectors' }}",
                         "step_name": "Update Manager Request after approval"
                     },
                     {
@@ -308,5 +308,7 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": []
+    "recordTags": [
+        "Referenced"
+    ]
 }

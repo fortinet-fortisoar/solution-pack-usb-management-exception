@@ -8,35 +8,9 @@
         "description": "Active Directory (AD) is a directory service that Microsoft developed for Windows domain networks. You can directly query AD to retrieve information about users, groups, and computers, in an organization, by using the Lightweight Directory Access Protocol (LDAP) to directly query the AD.",
         "publisher": "Fortinet",
         "operation_roles": [],
-        "configurations": [
-            {
-                "id": 72,
-                "config_id": "",
-                "status": 1,
-                "name": "Active Directory",
-                "default": true,
-                "config": {
-                    "port": ,
-                    "baseDN": "",
-                    "bindDN": "",
-                    "use_tls": false,
-                    "hostname": "",
-                    "password": "",
-                    "username": ""
-                },
-                "remote_status": [],
-                "health_status": [],
-                "connector": 136,
-                "agent": "ff0798a275f60b847e4f911cb80108ed",
-                "teams": []
-            }
-        ],
+        "configurations": [],
         "dataImports": [],
-        "install_mode": "rpm",
-        "ingestionPlaybooks": {
-            "collections": [],
-            "exported_tags": []
-        }
+        "install_mode": "rpm"
     },
     {
         "name": "exchange",
@@ -58,33 +32,10 @@
             "Endpoint Protection"
         ],
         "description": "FortiEDR protects endpoints pre and post infection, stopping data breaches in real-time and automatically orchestrating incident investigation and response. This connector facilitates the automated operations related to events, forensics and collectors.",
-        "publisher": null,
-        "version": "2.0.0",
+        "publisher": "Fortinet",
         "operation_roles": [],
-        "configurations": [
-            {
-                "id": 111,
-                "config_id": "ccabff18-59bc-45c5-b4b5-9f0941d39aa0",
-                "status": 1,
-                "name": "FortiEDR",
-                "default": true,
-                "config": {
-                    "password": "",
-                    "username": "",
-                    "server_url": "",
-                    "verify_ssl": true
-                },
-                "remote_status": [],
-                "health_status": [],
-                "connector": 199,
-                "agent": "ff0798a275f60b847e4f911cb80108ed",
-                "teams": []
-            }
-        ],
+        "configurations": [],
         "dataImports": [],
-        "ingestionPlaybooks": {
-            "collections": [],
-            "exported_tags": []
-        }
+        "install_mode": "rpm"
     }
 ]

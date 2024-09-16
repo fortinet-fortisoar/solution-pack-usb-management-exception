@@ -1,0 +1,25 @@
+{
+    "@context": "\/api\/3\/contexts\/SystemViewTemplate",
+    "@type": "SystemViewTemplate",
+    "type": "app",
+    "config": {
+        "navigation": [
+            {
+                "editMode": false,
+                "icon": "fa fa-glass",
+                "require": {
+                    "action": "read",
+                    "module": "u_s_bs"
+                },
+                "state": {
+                    "name": "main.modules.list",
+                    "parameters": {
+                        "module": "u_s_bs"
+                    }
+                },
+                "title": "USB System Management"
+            }
+        ]
+    },
+    "uuid": "navigation"
+}

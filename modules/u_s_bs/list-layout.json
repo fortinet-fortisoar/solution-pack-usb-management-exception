@@ -15,7 +15,11 @@
                                     "module": "u_s_bs",
                                     "columns": [
                                         "id",
-                                        "sOCApproval"
+                                        "requesterName",
+                                        "managerName",
+                                        "requestStatus",
+                                        "managerApprovalStatus",
+                                        "validation"
                                     ],
                                     "expandableCol": [],
                                     "relationshipField": [],
@@ -40,7 +44,7 @@
         ],
         "wid": "6d60588a-86bf-4470-acbc-fcac8fecf99b",
         "metadata": {
-            "customTemplateTitle": "USB Request",
+            "customTemplateTitle": "USB System Management",
             "originalTemplateTitle": "USBs"
         }
     },
